@@ -40,9 +40,11 @@ export default defineComponent({
         content: 'ct5'
       }
     ]);
+
     const meta = ref<Meta>({
       totalCount: 1200
     });
+
     return { todos, meta };
   }
 });
