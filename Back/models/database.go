@@ -10,7 +10,7 @@ func DB() *gorm.DB {
 	if err != nil {
 		panic("Не удалось подключиться к базе данных")
 	}
-	db.AutoMigrate(&User{})
+	db.AutoMigrate(&Test{})
 
 	return db
 }

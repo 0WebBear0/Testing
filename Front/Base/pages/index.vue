@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header/>
-    <Container :table-date="dateTable" />
+    <Container :table-date="dateTable?.date" />
   </div>
 </template>
 
@@ -23,13 +23,13 @@ export default {
 
   methods: {
     async fetchSomething() {
-      this.dateTable = await this.$axios.$get('https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8')
+      this.dateTable = await this.$axios.$get('http://localhost:8080/', (res) =>{
+        res.set('Access-Control-Allow-Origin', 'http://localhost:8080');
+      })
     }
   },
   created() {
     this.fetchSomething()
-    console.log('test')
-    console.log(this.dateTable)
   }
 }
 </script>

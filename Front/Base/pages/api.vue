@@ -28,8 +28,6 @@ export default {
   },
   created() {
     this.fetchSomething()
-    console.log('test')
-    console.log(this.dateTable)
   }
 }
 </script>
